@@ -13,11 +13,19 @@ output:
 ```{r}
 data(iris)
 
+element <- iris[10, 5]
+element
+
 ```
 
 
 #### Select the Species column in `iris` dataset and print the last 5 rows of that column
 ```{r}
+data(iris)
+
+species_column <- iris$Species
+last_five_rows <- tail(species_column, 5)
+last_five_rows
 
 ```
 
@@ -25,6 +33,10 @@ data(iris)
 #### What is the average Sepal Length of flowers with Petal widths greater than 1? 
 
 ```{r}
+data(iris)
+
+average_sepal_length <- mean(iris$Sepal.Length[iris$Petal.Width > 1])
+average_sepal_length
 
 
 ```

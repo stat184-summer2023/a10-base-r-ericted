@@ -109,10 +109,15 @@ Counting
 ##### 5B) Then call the function to generate 1000 random normal numbers with mean 0 and standard deviation 1 and plot a histogram of it.
 
 ```{r}
+
 set.seed(184)
-plotNormal <- function(repitions, mean, sd){
-  
+plotNormal <- function(repetitions, mean, sd) {
+  random_numbers <- rnorm(repetitions, mean = mean, sd = sd)
+  hist(random_numbers, main = "Histogram of Random Normal Numbers", xlab = "Values")
 }
+
+# 5.b
+plotNormal(1000, mean = 0, sd = 1)
 
 
 ```
@@ -128,6 +133,15 @@ Call the function to generate 1000 random normal numbers with mean 0 and standar
 
 ```{r}
 
+set.seed(184)
+plotNormal <- function(repetitions, mean, sd, color = "blue") {
+  random_numbers <- rnorm(repetitions, mean = mean, sd = sd)
+  hist(random_numbers, main = paste("Histogram from a Normal(" ,mean, ", " ,sd, ") Distribution"), 
+       xlab = "Values", col = color)
+}
+
+
+plotNormal(1000, mean = 0, sd = 1, color = "blue")
 
 
 ```
